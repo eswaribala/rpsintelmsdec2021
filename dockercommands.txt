@@ -11,3 +11,4 @@ SQL Server Client
 docker exec -it  03a8013c7222 /opt/mssql-tools/bin/sqlcmd -U sa -P Vignesh@95
 select name from sys.databases;
 GO
+docker run -p 6060:80 --name inv-c1 --link hungry_black:mcr.microsoft.com/mssql/server -d invapp2021:latest
