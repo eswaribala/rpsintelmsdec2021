@@ -54,5 +54,6 @@ docker push eswaribala/rpsintelrepo:pyapp
 To pull the image from remote machine
 docker pull eswaribala/rpsintelrepo:pyapp
 
-
+python container
+docker run --name py-c1 -p 7072:5000 -d eswaribala/rpsintelrepo:pyapp
 
