@@ -14,6 +14,12 @@ docker run --name mongo-c1 -p 27017:27017 -d mongov1
 docker run --name mongo-c2  -p 14000:27017 -d mongov1
 
 
+Customizing mongo configuration
+
+docker run --name mongo-c3 -p 11000:27017  -e MONGO_INITDB_ROOT_USERNAME=mongoadmin 
+   -e MONGO_INITDB_ROOT_PASSWORD=secret  -d mongo
+
+
 ======================================
 
 
