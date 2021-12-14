@@ -3,6 +3,20 @@ docker run --name intel-mysql -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=
 docker exec -it intel-mysql mysql -u root -p
 docker run --name intel-mongo -d mongo
 docker exec -it intel-mongo mongo
+======================================
+Create image from container
+docker commit intel-mongo mongov1
+
+Create container from image
+
+docker run --name mongo-c1 -p 27017:27017 -d mongov1
+
+docker run --name mongo-c2  -p 14000:27017 -d mongov1
+
+
+======================================
+
+
 docker run -d -t -it --hostname my-rabbitmq --name rabbitmq3-server -p 15672:15672 -p 5672:5672 -e RABBITMQ_DEFAULT_USER=guest -e RABBITMQ_DEFAULT_PASS=guest rabbitmq:3-management
 docker run -it --rm --name rabbitmq-c1 -p 5672:5672 -p 15672:15672 rabbitmq:3-management
 SQL Server
