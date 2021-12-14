@@ -24,6 +24,9 @@ docker exec -it mongo-c3 mongo  -u mongoadmin -p secret
 docker exec -it mongo-c3 mongo  -u mongoadmin -p secret 
 --authenticationDatabase admin
 
+Non docker command
+mongo --port 11000 -u mongoadmin -p secret
+
 ======================================
 
 
