@@ -41,3 +41,18 @@ select name from sys.databases;
 GO
 docker build -f Dockerfile -t invapp2021 .
 docker run -p 6060:80 --name inv-c1 --link hungry_black:mcr.microsoft.com/mssql/server -d invapp2021:latest
+================================================================================
+Docker hub
+
+create repository in docker hub
+
+docker login
+
+docker tag pyappv1:latest eswaribala/rpsintelrepo:pyapp
+docker push eswaribala/rpsintelrepo:pyapp
+
+To pull the image from remote machine
+docker pull eswaribala/rpsintelrepo:pyapp
+
+
+
