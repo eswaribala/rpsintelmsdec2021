@@ -56,4 +56,21 @@ docker pull eswaribala/rpsintelrepo:pyapp
 
 python container
 docker run --name py-c1 -p 7072:5000 -d eswaribala/rpsintelrepo:pyapp
+======================================================================
+docker volume
+Method 1
+
+docker container run -it --tty ubuntu /bin/bash
+
+docker container run -it -v/udata --tty ubuntu /bin/bash
+
+cd udata
+touch file1.txt
+exit
+docker container restart 2eec01eb7368
+docker attach 2eec01eb7368
+exit
+docker container rm 2eec01eb7368
+docker volume ls
+
 
