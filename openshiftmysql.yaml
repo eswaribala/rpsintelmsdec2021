@@ -1,0 +1,382 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  generateName: rpsmongodb-1-
+  annotations:
+    k8s.v1.cni.cncf.io/network-status: |-
+      [{
+          "name": "openshift-sdn",
+          "interface": "eth0",
+          "ips": [
+              "10.130.7.39"
+          ],
+          "default": true,
+          "dns": {}
+      }]
+    k8s.v1.cni.cncf.io/networks-status: |-
+      [{
+          "name": "openshift-sdn",
+          "interface": "eth0",
+          "ips": [
+              "10.130.7.39"
+          ],
+          "default": true,
+          "dns": {}
+      }]
+    kubernetes.io/limit-ranger: >-
+      LimitRanger plugin set: cpu request for container mongodb; cpu limit for
+      container mongodb
+    openshift.io/deployment-config.latest-version: '1'
+    openshift.io/deployment-config.name: rpsmongodb
+    openshift.io/deployment.name: rpsmongodb-1
+    openshift.io/scc: restricted
+  resourceVersion: '422896768'
+  name: rpsmongodb-1-bhdt7
+  uid: 67c62593-1d19-4b74-9a37-1f1dfaba8a36
+  creationTimestamp: '2021-12-15T10:11:47Z'
+  managedFields:
+    - manager: kube-controller-manager
+      operation: Update
+      apiVersion: v1
+      time: '2021-12-15T10:11:47Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:openshift.io/deployment-config.latest-version': {}
+            'f:openshift.io/deployment-config.name': {}
+            'f:openshift.io/deployment.name': {}
+          'f:generateName': {}
+          'f:labels':
+            .: {}
+            'f:deployment': {}
+            'f:deploymentconfig': {}
+            'f:name': {}
+          'f:ownerReferences':
+            .: {}
+            'k:{"uid":"dd4fd5b0-8945-4483-8fd9-26d89c91ac88"}': {}
+        'f:spec':
+          'f:containers':
+            'k:{"name":"mongodb"}':
+              'f:image': {}
+              'f:volumeMounts':
+                .: {}
+                'k:{"mountPath":"/var/lib/mongodb/data"}':
+                  .: {}
+                  'f:mountPath': {}
+                  'f:name': {}
+              'f:terminationMessagePolicy': {}
+              .: {}
+              'f:resources':
+                .: {}
+                'f:limits':
+                  .: {}
+                  'f:memory': {}
+                'f:requests':
+                  .: {}
+                  'f:memory': {}
+              'f:livenessProbe':
+                .: {}
+                'f:failureThreshold': {}
+                'f:initialDelaySeconds': {}
+                'f:periodSeconds': {}
+                'f:successThreshold': {}
+                'f:tcpSocket':
+                  .: {}
+                  'f:port': {}
+                'f:timeoutSeconds': {}
+              'f:env':
+                .: {}
+                'k:{"name":"MONGODB_ADMIN_PASSWORD"}':
+                  .: {}
+                  'f:name': {}
+                  'f:valueFrom':
+                    .: {}
+                    'f:secretKeyRef': {}
+                'k:{"name":"MONGODB_DATABASE"}':
+                  .: {}
+                  'f:name': {}
+                  'f:valueFrom':
+                    .: {}
+                    'f:secretKeyRef': {}
+                'k:{"name":"MONGODB_PASSWORD"}':
+                  .: {}
+                  'f:name': {}
+                  'f:valueFrom':
+                    .: {}
+                    'f:secretKeyRef': {}
+                'k:{"name":"MONGODB_USER"}':
+                  .: {}
+                  'f:name': {}
+                  'f:valueFrom':
+                    .: {}
+                    'f:secretKeyRef': {}
+              'f:readinessProbe':
+                .: {}
+                'f:exec':
+                  .: {}
+                  'f:command': {}
+                'f:failureThreshold': {}
+                'f:initialDelaySeconds': {}
+                'f:periodSeconds': {}
+                'f:successThreshold': {}
+                'f:timeoutSeconds': {}
+              'f:securityContext':
+                .: {}
+                'f:capabilities': {}
+                'f:privileged': {}
+              'f:terminationMessagePath': {}
+              'f:imagePullPolicy': {}
+              'f:ports':
+                .: {}
+                'k:{"containerPort":27017,"protocol":"TCP"}':
+                  .: {}
+                  'f:containerPort': {}
+                  'f:protocol': {}
+              'f:name': {}
+          'f:dnsPolicy': {}
+          'f:enableServiceLinks': {}
+          'f:restartPolicy': {}
+          'f:schedulerName': {}
+          'f:securityContext': {}
+          'f:terminationGracePeriodSeconds': {}
+          'f:volumes':
+            .: {}
+            'k:{"name":"rpsmongodb-data"}':
+              .: {}
+              'f:name': {}
+              'f:persistentVolumeClaim':
+                .: {}
+                'f:claimName': {}
+    - manager: multus
+      operation: Update
+      apiVersion: v1
+      time: '2021-12-15T10:12:12Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            'f:k8s.v1.cni.cncf.io/network-status': {}
+            'f:k8s.v1.cni.cncf.io/networks-status': {}
+      subresource: status
+    - manager: kubelet
+      operation: Update
+      apiVersion: v1
+      time: '2021-12-15T10:12:23Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:status':
+          'f:conditions':
+            'k:{"type":"ContainersReady"}':
+              .: {}
+              'f:lastProbeTime': {}
+              'f:lastTransitionTime': {}
+              'f:status': {}
+              'f:type': {}
+            'k:{"type":"Initialized"}':
+              .: {}
+              'f:lastProbeTime': {}
+              'f:lastTransitionTime': {}
+              'f:status': {}
+              'f:type': {}
+            'k:{"type":"Ready"}':
+              .: {}
+              'f:lastProbeTime': {}
+              'f:lastTransitionTime': {}
+              'f:status': {}
+              'f:type': {}
+          'f:containerStatuses': {}
+          'f:hostIP': {}
+          'f:phase': {}
+          'f:podIP': {}
+          'f:podIPs':
+            .: {}
+            'k:{"ip":"10.130.7.39"}':
+              .: {}
+              'f:ip': {}
+          'f:startTime': {}
+      subresource: status
+  namespace: vebconsulting2021-dev
+  ownerReferences:
+    - apiVersion: v1
+      kind: ReplicationController
+      name: rpsmongodb-1
+      uid: dd4fd5b0-8945-4483-8fd9-26d89c91ac88
+      controller: true
+      blockOwnerDeletion: true
+  labels:
+    deployment: rpsmongodb-1
+    deploymentconfig: rpsmongodb
+    name: rpsmongodb
+spec:
+  restartPolicy: Always
+  serviceAccountName: default
+  imagePullSecrets:
+    - name: default-dockercfg-ffcg4
+  priority: -3
+  schedulerName: default-scheduler
+  enableServiceLinks: true
+  terminationGracePeriodSeconds: 30
+  preemptionPolicy: PreemptLowerPriority
+  nodeName: ip-10-0-196-71.us-east-2.compute.internal
+  securityContext:
+    seLinuxOptions:
+      level: 's0:c123,c17'
+    fsGroup: 1015040000
+  containers:
+    - resources:
+        limits:
+          cpu: '1'
+          memory: 512Mi
+        requests:
+          cpu: 10m
+          memory: 512Mi
+      readinessProbe:
+        exec:
+          command:
+            - /bin/sh
+            - '-i'
+            - '-c'
+            - >-
+              mongo 127.0.0.1:27017/$MONGODB_DATABASE -u $MONGODB_USER -p
+              $MONGODB_PASSWORD --eval="quit()"
+        initialDelaySeconds: 3
+        timeoutSeconds: 1
+        periodSeconds: 10
+        successThreshold: 1
+        failureThreshold: 3
+      terminationMessagePath: /dev/termination-log
+      name: mongodb
+      livenessProbe:
+        tcpSocket:
+          port: 27017
+        initialDelaySeconds: 30
+        timeoutSeconds: 1
+        periodSeconds: 10
+        successThreshold: 1
+        failureThreshold: 3
+      env:
+        - name: MONGODB_USER
+          valueFrom:
+            secretKeyRef:
+              name: rpsmongodb
+              key: database-user
+        - name: MONGODB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: rpsmongodb
+              key: database-password
+        - name: MONGODB_ADMIN_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: rpsmongodb
+              key: database-admin-password
+        - name: MONGODB_DATABASE
+          valueFrom:
+            secretKeyRef:
+              name: rpsmongodb
+              key: database-name
+      securityContext:
+        capabilities:
+          drop:
+            - KILL
+            - MKNOD
+            - SETGID
+            - SETUID
+        privileged: false
+        runAsUser: 1015040000
+      ports:
+        - containerPort: 27017
+          protocol: TCP
+      imagePullPolicy: IfNotPresent
+      volumeMounts:
+        - name: rpsmongodb-data
+          mountPath: /var/lib/mongodb/data
+        - name: kube-api-access-7jrsh
+          readOnly: true
+          mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      terminationMessagePolicy: File
+      image: >-
+        image-registry.openshift-image-registry.svc:5000/openshift/mongodb@sha256:a6c76b590dd105f20fbbf12408e79e9fb284fd4a545da3203350c377ff65cf38
+  serviceAccount: default
+  volumes:
+    - name: rpsmongodb-data
+      persistentVolumeClaim:
+        claimName: rpsmongodb
+    - name: kube-api-access-7jrsh
+      projected:
+        sources:
+          - serviceAccountToken:
+              expirationSeconds: 3607
+              path: token
+          - configMap:
+              name: kube-root-ca.crt
+              items:
+                - key: ca.crt
+                  path: ca.crt
+          - downwardAPI:
+              items:
+                - path: namespace
+                  fieldRef:
+                    apiVersion: v1
+                    fieldPath: metadata.namespace
+          - configMap:
+              name: openshift-service-ca.crt
+              items:
+                - key: service-ca.crt
+                  path: service-ca.crt
+        defaultMode: 420
+  dnsPolicy: ClusterFirst
+  tolerations:
+    - key: node.kubernetes.io/not-ready
+      operator: Exists
+      effect: NoExecute
+      tolerationSeconds: 300
+    - key: node.kubernetes.io/unreachable
+      operator: Exists
+      effect: NoExecute
+      tolerationSeconds: 300
+    - key: node.kubernetes.io/memory-pressure
+      operator: Exists
+      effect: NoSchedule
+  priorityClassName: sandbox-users-pods
+status:
+  phase: Running
+  conditions:
+    - type: Initialized
+      status: 'True'
+      lastProbeTime: null
+      lastTransitionTime: '2021-12-15T10:11:53Z'
+    - type: Ready
+      status: 'True'
+      lastProbeTime: null
+      lastTransitionTime: '2021-12-15T10:12:23Z'
+    - type: ContainersReady
+      status: 'True'
+      lastProbeTime: null
+      lastTransitionTime: '2021-12-15T10:12:23Z'
+    - type: PodScheduled
+      status: 'True'
+      lastProbeTime: null
+      lastTransitionTime: '2021-12-15T10:11:53Z'
+  hostIP: 10.0.196.71
+  podIP: 10.130.7.39
+  podIPs:
+    - ip: 10.130.7.39
+  startTime: '2021-12-15T10:11:53Z'
+  containerStatuses:
+    - restartCount: 0
+      started: true
+      ready: true
+      name: mongodb
+      state:
+        running:
+          startedAt: '2021-12-15T10:12:13Z'
+      imageID: >-
+        image-registry.openshift-image-registry.svc:5000/openshift/mongodb@sha256:a6c76b590dd105f20fbbf12408e79e9fb284fd4a545da3203350c377ff65cf38
+      image: >-
+        image-registry.openshift-image-registry.svc:5000/openshift/mongodb@sha256:a6c76b590dd105f20fbbf12408e79e9fb284fd4a545da3203350c377ff65cf38
+      lastState: {}
+      containerID: 'cri-o://66385531d1adb5e43da871c34e511adae925d71e20eb198e91ab08107ba9da2b'
+  qosClass: Burstable
