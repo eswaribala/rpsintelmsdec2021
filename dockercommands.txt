@@ -103,4 +103,42 @@ docker run -it --volumes-from container1 --name container2 busybox
 docker run -ti --name=Container2 --volumes-from Container1:ro ubuntu
 
 
+Method 4
+
+docker volume create rmdatavol
+docker volume create mssqlvol
+docker volume ls
+
+docker volume inspect mssqlvol
+docker volume rm my-vol
+
+Attach volume to container
+
+docker run -it -v /mssqlvol --name msb1 busybox
+***d->detached****
+docker run -d -v /mssqlvol --name msb2 busybox
+
+docker run -it -p 8074:8070 -v/data --name appointment-c3
+--link virtusa-mysql:mysql appointmentapp:latest
+docker container inspect e350ffad6d4c
+can check volume name
+
+
+docker volume create my-vol
+docker volume ls
+
+docker volume inspect my-vol
+[
+    {
+        "Driver": "local",
+        "Labels": {},
+        "Mountpoint": "/var/lib/docker/volumes/my-vol/_data",
+        "Name": "my-vol",
+        "Options": {},
+        "Scope": "local"
+    }
+]
+--------------------------
+docker volume rm my-vol
+
 
