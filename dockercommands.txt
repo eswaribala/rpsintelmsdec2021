@@ -62,6 +62,10 @@ Method 1
 
 docker container run -it --tty ubuntu /bin/bash
 
+docker container run -d --tty ubuntu /bin/bash
+
+docker exec -it containerid /bin/bash
+
 docker container run -it -v/udata --tty ubuntu /bin/bash
 
 cd udata
