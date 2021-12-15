@@ -81,8 +81,7 @@ docker volume ls
 Method 2
 #Docker file sharing
 #docker external storage
-docker container run -it -v G:/Local disk/dec2021/backup:/mnt/test 
-ubuntu /bin/bash
+docker container run -it -v G:/Local disk/dec2021/backup:/mnt/test ubuntu /bin/bash
 
 docker container run -it -v E:/dockerfilesharing/project/web01:/mnt/dotnetshare ubuntu /bin/bash
 
