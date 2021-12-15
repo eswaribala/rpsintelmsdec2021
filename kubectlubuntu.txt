@@ -51,7 +51,7 @@ For this demo, we are going to use an application called minikube. Open a termin
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
 
-minikube start
+minikube start --driver=none
 
 This will start a Kubernetes Cluster locally. To stop the cluster, you can:
 
@@ -61,3 +61,7 @@ To access your local Kubernetes’ dashboard:
 
 minikube dashboard
 
+Incase of error
+Use command : sudo apt-get install -y conntrack
+then following by: sudo -E minikube start --driver=none
+it worked for me :)
