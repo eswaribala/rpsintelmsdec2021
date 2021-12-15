@@ -84,5 +84,23 @@ Method 2
 docker container run -it -v G:/Local disk/dec2021/backup:/mnt/test ubuntu /bin/bash
 
 
+Method 3
+
+#data volume container for data sharing
+docker run -it -v /data --name container1 busybox
+
+cd data
+touch file1.txt
+touch file2.txt
+#let it be running
+#open another terminal
+docker exec container1 ls /data
+
+#launch another container
+docker run -it --volumes-from container1 --name container2 busybox
+
+#Read only
+docker run -ti --name=Container2 --volumes-from Container1:ro ubuntu
+
 
 
