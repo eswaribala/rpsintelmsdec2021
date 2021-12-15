@@ -1,67 +1,10 @@
-Kubernetes Installation – Using kubeadm
-First, have two VM’s setup. 
-One of which we will be using as our master node, and other as worker node.
-
-1.	Install Docker
-$ sudo apt update
-$ sudo apt install docker.io
-$ sudo systemctl start docker
-$ sudo systemctl enable docker
-
-2.	Install Kubernetes
-$ sudo apt install apt-transport-https curl
-$ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add
-$ sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
-$ sudo apt install kubeadm kubelet kubectl kubernetes-cni
-
-export KUBECONFIG=/etc/kubernetes/admin.conf
-
-3.	Disable Swap Memory
-
-$ sudo swapoff -a
-$ sudo nano /etc/fstab
-
-Inside this file, comment out the /swapfile line.
-
-4.	Set hostnames
-$ sudo hostnamectl set-hostname kubernetes-master
-$ sudo hostnamectl set-hostname kubernetes-worker
-
-5.	Initialize Kubernetes master server
-Run these on the master node:
-kubernetes-master:~$ sudo kubeadm init
-kubernetes-master:~$ mkdir -p $HOME/.kube
-kubernetes-master:~$ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-kubernetes-master:~$ sudo chown $(id -u):$(id -g) $HOME/.kube/config
-
-6.	Deploy a pod network
-kubernetes-master:~$ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
-kubernetes-master:~$ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/k8s-manifests/kube-flannel-rbac.yml
-kubernetes-master:~$ kubectl get pods --all-namespaces
-
-7.	Join the Kubernetes cluster
-Run these from the worker node:
-kubernetes-worker:~$ sudo kubeadm join 192.168.1.220:6443 --token 1exb8s.2t4k3b5syfc3jfmo --discovery-token-ca-cert-hash sha256:72ad481cee4918cf2314738419356c9a402fb609263adad48c13797d0cba2341
-kubernetes-master:~$ kubectl get nodes
-
-Kubernetes Installation – Using minikube (Locally)
-
-For this demo, we are going to use an application called minikube. Open a terminal using Ctrl + Alt + T and enter the following commands:
-
-curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
-sudo install minikube-linux-amd64 /usr/local/bin/minikube
-
-minikube start --driver=none
-
-This will start a Kubernetes Cluster locally. To stop the cluster, you can:
-
-minikube stop
-
-To access your local Kubernetes’ dashboard:
-
-minikube dashboard
-
-Incase of error
-Use command : sudo apt-get install -y conntrack
-then following by: sudo -E minikube start --driver=none
-it worked for me :)
+kubeadm reset
+sudo apt-get purge kubeadm kubectl kubelet kubernetes-cni kube*
+sudo apt-get autoremove
+sudo rm -rf ~/.kube
+sudo rm -rf ~/.minikube
+sudo rm -rf /var/lib/minikube
+sudo rm -rf /var/lib/kubelet
+sudo rm -rf /var/lib/localkube
+sudo rm -rf /data/minikube
+sudo rm -rf /var/lib/kubeadm.yaml
