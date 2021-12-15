@@ -57,8 +57,8 @@ docker pull eswaribala/rpsintelrepo:pyapp
 python container
 docker run --name py-c1 -p 7072:5000 -d eswaribala/rpsintelrepo:pyapp
 ======================================================================
-docker volume
-Method 1
+#docker volume
+#Method 1
 
 docker container run -it --tty ubuntu /bin/bash
 
@@ -76,5 +76,14 @@ docker attach 2eec01eb7368
 exit
 docker container rm 2eec01eb7368
 docker volume ls
+
+
+Method 2
+#Docker file sharing
+#docker external storage
+docker container run -it -v G:/Local disk/dec2021/backup:/mnt/test 
+ubuntu /bin/bash
+
+docker container run -it -v E:/dockerfilesharing/project/web01:/mnt/dotnetshare ubuntu /bin/bash
 
 
