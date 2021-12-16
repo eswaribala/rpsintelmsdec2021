@@ -3,4 +3,6 @@
 minikube addons enable ingress
 kubectl apply -f ingressdeployment.yaml
 kubectl get ingress
+sudo snap install helm --classic
+helm version
 
