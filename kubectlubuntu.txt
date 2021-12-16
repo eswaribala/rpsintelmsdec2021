@@ -30,4 +30,14 @@ minikube start
 kubectl config view
 kubectl cluster-info
 
+
+#custom configuration
+minikube config set memory 4096
+minikube config set cpus 2
+minikube config set vm-driver virtualbox
+minikube start
+minikube start -p cluster1 
+minikube status
+--------------------------------------------------------------
+minikube -p cluster1 dashboard
   
