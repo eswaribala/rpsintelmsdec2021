@@ -1,0 +1,11 @@
+sudo apt update
+sudo apt -y install wget
+wget https://dev.mysql.com/get/mysql-apt-config_0.8.15-1_all.deb
+ ls -lh mysql-apt-config_0.8.15-1_all.deb 
+ sudo apt install ./mysql-apt-config_0.8.15-1_all.deb
+ sudo dpkg -i mysql-apt-config_0.8.15-1_all.deb
+ sudo apt update
+ sudo apt install mysql-workbench-community
+ 
+ for clarity
+ https://computingforgeeks.com/install-and-use-mysql-workbench-on-ubuntu/
