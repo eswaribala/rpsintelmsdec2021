@@ -1,3 +1,5 @@
+Uninstall kubernetes
+==================================
 kubeadm reset
 sudo apt-get purge kubeadm kubectl kubelet kubernetes-cni kube*
 sudo apt-get autoremove
@@ -8,6 +10,9 @@ sudo rm -rf /var/lib/kubelet
 sudo rm -rf /var/lib/localkube
 sudo rm -rf /data/minikube
 sudo rm -rf /var/lib/kubeadm.yaml
+=======================================
+Install Kubernetes
+====================================
 sudo apt-get update -y
 sudo apt-get upgrade -y
 sudo apt-get install curl
