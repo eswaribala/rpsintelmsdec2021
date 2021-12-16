@@ -1,0 +1,2 @@
+1.kubectl get pod –o wide
+2.kubectl get service –all-namespaces
