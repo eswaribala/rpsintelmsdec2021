@@ -7,4 +7,4 @@ helm install example ./mychart --set service.type=NodePort
 helm create mysql-chart
 helm install --dry-run --debug ./mysql-chart --generate-name
 helm install --dry-run --debug ./mysql-chart --set service.internalPort=3306
-helm install rps-mysql ./mysql-chart --set service.type=NodePort
+helm install rps-mysql ./mysql-chart --set service.type=LoadBalancer
