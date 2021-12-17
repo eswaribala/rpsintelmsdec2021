@@ -1,3 +1,6 @@
+sudo snap install helm --classic
+helm version
+
 helm repo add bitnami https://charts.bitnami.com/bitnami
 helm install my-release bitnami/mysql
 helm install bitnami/mysql --generate-name
