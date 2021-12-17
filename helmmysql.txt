@@ -1,0 +1,11 @@
+helm repo add bitnami https://charts.bitnami.com/bitnami
+helm install my-release bitnami/mysql
+helm install bitnami/mysql --generate-name
+helm install my-release \
+  --set auth.rootPassword=secretpassword,auth.database=app_database \
+    bitnami/mysql
+or
+ helm install my-release -f values.yaml bitnami/mysql
+
+
+
