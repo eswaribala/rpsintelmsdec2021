@@ -30,3 +30,6 @@ minikube config set cpus 3
 minikube start --nodes 4 -p multinode-demo
 minikube node add --control-plane=false --worker=true -p multinode-demo
 
+minikube node delete multinode-demo-m06 -p multinode-demo
+
+
