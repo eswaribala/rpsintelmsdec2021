@@ -13,4 +13,7 @@ kubectl rollout status deployment/mysql-app
 minikube service list -p multinode-demo
 
 minikube addons list
-minikube addons enable metrics-server 
+minikube addons enable metrics-server -p multinode-demo 
+
+kubectl top node
+kubectl top pod
