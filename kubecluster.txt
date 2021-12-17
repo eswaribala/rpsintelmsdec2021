@@ -14,6 +14,6 @@ minikube service list -p multinode-demo
 
 minikube addons list
 minikube addons enable metrics-server -p multinode-demo 
-pod/metrics-server-77c99ccb96-qthdv   
+kubectl get pod,svc -n kube-system 
 kubectl top node
 kubectl top pod
