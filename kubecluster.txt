@@ -3,6 +3,7 @@ minikube delete
 minikube start --nodes 4 -p multinode-demo
 kubectl get nodes
 minikube status -p multinode-demo
+kubectl apply -f mysql-pv.yaml
 kubectl apply -f mysql-deployment.yaml
 kubectl get pods
 kubectl rollout status deployment/mysql-app
