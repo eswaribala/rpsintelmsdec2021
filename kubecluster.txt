@@ -22,11 +22,11 @@ minikube profile list
 minikube node list 
 ################
 start minikube with new configuration
-minikube stop multinode-demo
-minikube delete multinode-demo
+minikube stop -p multinode-demo
+minikube delete -p multinode-demo
 
 minikube config set memory 4000
 minikube config set cpus 3
-minikube start -p multinode-demo
+minikube start --nodes 4 -p multinode-demo
 minikube node add --control-plane=false --worker=true -p multinode-demo
 
