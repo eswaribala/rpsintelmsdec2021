@@ -10,3 +10,5 @@ sudo microk8s disable dns dashboard storage
 sudo microk8s kubectl version
 sudo microk8s kubectl cluster-info
 sudo microk8s kubectl get all --all-namespaces
+microk8s kubectl get all --all-namespaces
+sudo token=$(microk8s kubectl -n kube-system get secret | grep default-token | cut -d " " -f1) microk8s kubectl -n kube-system describe secret $token
