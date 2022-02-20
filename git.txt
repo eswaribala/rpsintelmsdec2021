@@ -29,7 +29,7 @@ git config --global user.name "your username"
  
  git remote add origin https://gitlab.com/Parameswari/gitecommrepo.git
  
- git push origin master
+ git push --force origin master
  ==============================
  docker login registry.gitlab.com
 
@@ -41,6 +41,26 @@ git config --global user.name "your username"
  
  
  git push
+ 
+ create branch
+ 
+ git branch docs #create branch
+  
+ git branch  #list branch
+ 
+ git branch -d docs  #delete branch
+ 
+ git branch -m <old_name> <new_name> #rename branch
+ 
+ 
+
+
+
+  
+  
+  
+  
+ 
   
  
  
