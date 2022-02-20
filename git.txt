@@ -66,7 +66,7 @@ git config --global user.name "your username"
  
  git merge docs
  
-
+ git push origin master
 
   
   
