@@ -52,6 +52,13 @@ git config --global user.name "your username"
  
  git branch -m <old_name> <new_name> #rename branch
  
+ git checkout docs
+ 
+ git add .
+ 
+ git commit -m "updated'
+ 
+ git push origin docs
  
 
 
