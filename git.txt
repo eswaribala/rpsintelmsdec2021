@@ -60,7 +60,12 @@ git config --global user.name "your username"
  
  git push origin docs
  
-
+ git checkout master
+ 
+ git ls-files
+ 
+ git merge docs
+ 
 
 
   
