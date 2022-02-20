@@ -1,0 +1,33 @@
+sudo apt-get install git
+
+sudo yum install git
+
+git config --global user.email "youremail@emaildomain.com"
+
+git config --global user.name "your username"
+
+ git config -l
+ 
+ git init projectname
+ 
+ cd projectname 
+ 
+ touch helloworld.c
+  
+ git add .
+ 
+ 
+ git commit -m "First commit of project, just an empty file"
+ 
+ git add helloworld.c
+ 
+ git commit -m "added source code to helloworld.c"
+ 
+ git log
+  git clone project.url/projectname.git
+   git push
+  
+ 
+ 
+ 
+ 
