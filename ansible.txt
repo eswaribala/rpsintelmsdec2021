@@ -24,7 +24,7 @@ ansible --version
 
 create playbook
 https://phoenixnap.com/kb/ansible-playbook
-
+https://www.digitalocean.com/community/tutorial_series/how-to-write-ansible-playbooks
 ---
 
 - name: Network Getting Started First Playbook
