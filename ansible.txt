@@ -41,5 +41,5 @@ https://www.digitalocean.com/community/tutorial_series/how-to-write-ansible-play
 
 
 Run playbook
-ansible-playbook ./first-palybook.yml
+ansible-playbook ./first-playbook.yml
 
