@@ -23,12 +23,7 @@ ansible --version
 Managing Packages
 Following are some of the ad-hoc commands using yum that check if the yum package is installed or not (but not for updating it)
 
-$ Ansible test-servers -m yum -a "name = demo-tomcat-1 state = present"
-o check if the package is installed or not:
 
-$ Ansible test-servers -m yum -a "name = demo-tomcat-1 state = absent"
-
-$ Ansible test-servers -m yum -a "name = demo-tomcat-1 state = latest"
 We can also use ad-hoc commands to gather facts by implementing conditional statements in our playbook. We can find information through this command:
 
 $ Ansible all -m setup
