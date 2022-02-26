@@ -10,6 +10,9 @@ kubectl rollout status deployment/mysql-app
 kubectl get pods -o wide
 kubectl scale --replicas=3 deploy mysql-app
 kubectl rollout status deployment/mysql-app
+
+#external ip pending then
+sudo microk8s kubectl patch svc traderservicev1  -p '{"spec": {"type": "LoadBalancer", "externalIPs":["172.22.0.1"]}}'
 minikube service list -p multinode-demo
 
 minikube addons list
