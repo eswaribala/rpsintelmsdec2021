@@ -8,3 +8,6 @@ sudo systemctl status jenkins
 sudo ufw allow 8080
 sudo ufw status
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+echo ${JAVA_HOME}
